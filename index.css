@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Plus+Jakarta+Sans:wght@800&family=Roboto+Mono:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    /* background-color: white; */
+    min-height: 100%;
+    display: grid;
+    grid-template-areas: 'header'
+                         'main'
+                        'footer';
+    grid-template-rows: 10% auto 5%;
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.fa-bars {
+    display: none;
+    font-size: 1.5rem;
+    margin-right: 2rem;
+    text-align: center;
+}
+
+#toggle-menu {
+    display: none;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    margin-right: 2rem;
+    z-index: 1; 
+}
+
+.nav-item {
+    margin: .5rem;
+    color: #011627;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #011627;
+}
+
+.nav-item a:hover {
+    color: #FCA311;
+}
+
+header h1 {
+    margin-left: 2rem;
+    color: #011627;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: bold;
+}
+
+main {
+    grid-area: main;
+}
+
+.portada {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    background-color: #FCA311;
+}
+
+.titulo {
+    width: 60%;
+    font-size: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1em;
+    text-align: center;
+    color: #011627;
+    /* display: block; */
+    white-space: nowrap;
+    border-right: 4px solid;
+    width: 11ch;
+
+    animation: typing 3.5s infinite steps(12), blink .5s infinite step-end alternate;
+    overflow:hidden;
+}
+
+@keyframes typing {
+
+    from { width: 0}
+    }
+    
+@keyframes blink {
+     50% { border-color: transparent}
+    }
+
+.titulo p {
+    font-size: .4em;
+    text-align: center;
+    color: #011627;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 600;
+    opacity: .8;
+    margin-top: 2rem;
+}
+
+.foto {
+    width: 40%;
+    height: 100%;
+    background-image: url(./img/IMG_20230501_144049144_HDR-01.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.proyectos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    font-size: 4rem;
+}
+
+.titulo-proyectos {
+    height: 100%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FCA311;
+}
+
+.titulo-proyectos h2 {
+    font-size: 1em;
+    text-align: center;
+    color: #011627;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.grid-proyectos {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.link-proyecto {
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+}
+
+.img-hover-1 {
+    width: 100%;
+    height: 100%;
+    background-image: url(/img/Patitas\ Felices.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.img-hover-2 {
+    width: 100%;
+    height: 100%;
+    background-image: url(/img/Pricing\ Card.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.img-hover-3 {
+    width: 100%;
+    height: 100%;
+    background-image: url(/img/Challenge\ Pop\ Up.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.img-overlay {
+    transition: opacity 0.3s ease;
+}
+
+.img-overlay:hover {
+    opacity: 0.5; /* La imagen se vuelve opaca al pasar el cursor */
+}
+
+.img-hover-1::after {
+    content: "Patitas Felices";
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    color: #011627;
+    font-family: 'Roboto Mono', monospace;
+    text-align: center;
+}
+
+.img-hover-1:hover::after {
+    opacity: 1;
+}
+
+.img-hover-2::after {
+    content: "Pricing Card";
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-30%, -50%);
+    opacity: 0;
+    color: #011627;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.img-hover-2:hover::after {
+    opacity: 1;
+}
+
+.img-hover-3::after {
+    content: "Pop Up";
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    color: #011627;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.img-hover-3:hover::after {
+    opacity: 1;
+}
+
+.sobre-mi-contenedor {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    font-size: 4rem;
+}
+
+.sobre-mi {
+    width: 60%;
+    height: 100%;
+    background-color: #FCA311;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.sobre-mi h2 {
+    font-size: 1em;
+}
+
+.sobre-mi-articulo {
+    width: 40%;
+    height: 100%;
+    text-align: center;
+    color: #011627;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.sobre-mi-articulo p {
+    margin: 1em;
+    text-align: left;
+    font-size: .4em;
+    font-weight: 400;
+}
+
+.redes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    font-size: 4rem;
+}
+
+.redes-titulo {
+    width: 40%;
+    height: 100%;
+    background-color: #FCA311;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    text-align: center;
+}
+
+.redes-titulo p {
+    font-size: 1em;
+}
+
+.redes-links {
+    width: 60%;
+    height: 100%;
+    text-align: center;
+    color: #011627;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.link-red-social {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: .4em;
+    border: solid #011627;
+    color: #e0e0e0;
+    background-color: #011627;
+    text-decoration: none;
+    padding: .3em;
+    border-radius: .3em;
+}
+
+.link-red-social:hover {
+    color: #011627;
+    background-color: #e0e0e0;
+    box-shadow: #FCA311 20px 15px;
+    font-weight: 600;
+}
+
+.fa-brands {
+    margin-right: .3em;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #011627;
+}
+
+footer p {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    color: #FCA311;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+
+    .portada, .proyectos, .sobre-mi-contenedor, .redes {
+        flex-direction: column;
+    }
+
+    .titulo {
+        width: 100%;
+        height: 50%;
+    }
+
+    .foto {
+        width: 100%;
+        height: 50%;
+    }
+
+    .titulo-proyectos {
+        width: 100%;
+        height: 40%;
+    }
+
+    .grid-proyectos {
+        width: 100%;
+        height: 60%;
+    }
+
+    .sobre-mi-contenedor {
+        flex-direction: column-reverse;
+    }
+
+    .redes-titulo {
+        width: 100%;
+        height: 40%;
+    }
+
+    .redes-links {
+        width: 100%;
+        height: 60%;
+    }
+    
+
+    .sobre-mi {
+        width: 100%;
+        height: 30%;
+    }
+
+    .sobre-mi-articulo {
+        width: 100%;
+        height: 70%;
+    }
+    
+    .sobre-mi, .redes-titulo, .titulo-proyectos {
+        font-size: .8em;
+    }
+
+    .nav-list {
+        background-color: white;
+        width: 100%;
+        height: 20rem;
+        position: absolute;
+        top: 3.1rem;
+        left: 0;
+        gap: 3rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+
+    .fa-bars {
+        display: block;
+    }
+
+    #toggle-menu:checked ~ .nav-list {
+        display: flex;
+    }
+
+}
