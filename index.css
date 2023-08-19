@@ -38,6 +38,10 @@ header {
     appearance: none;
 }
 
+#menu-icon {
+    display: none;
+}
+
 #toggle-menu {
     display: none;
 }
@@ -452,6 +456,10 @@ footer p {
     }
 
     .fa-bars {
+        display: block;
+    }
+
+    #menu-icon {
         display: block;
     }
 
